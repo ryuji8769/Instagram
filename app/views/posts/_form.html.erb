@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+  <!-- ここから追加するコード -->
+<div class="field">
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar %>
+</div>
+
   <div class="field">
     <%= form.label :text %>
     <%= form.text_field :text %>
