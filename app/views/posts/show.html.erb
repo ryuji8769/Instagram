@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<!-- 追加するコード-->
+<% if @post.image? %>  <!-- アップロード画像がある場合に実行する -->
+  <p>
+    <%= image_tag @post.image.url %><!-- userインスタンスの画像ファイルのURLを取得し表示 -->
+  </p>
+<% end %>
+<!-- ここまで -->
+
 <p>
-  <strong>Text:</strong>
   <%= @post.text %>
 </p>
 
