@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'relationships/new'
   get '/' => 'homes#index'
 
   devise_for :users, controllers: {

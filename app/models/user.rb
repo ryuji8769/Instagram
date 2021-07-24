@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+        #  紐付け（ユーザと投稿）
+         has_many :posts, dependent: :destroy, foreign_key: :post_user_id
+
   # いいね
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
