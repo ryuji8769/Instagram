@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_24_030050) do
+ActiveRecord::Schema.define(version: 2021_07_24_052126) do
 
   create_table "likes", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "post_id", null: false
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 2021_07_24_030050) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+  end
+
+  create_table "relationships", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "following_id"
+    t.integer "follower_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
