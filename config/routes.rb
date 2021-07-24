@@ -29,5 +29,8 @@ Rails.application.routes.draw do
   # コメント
   resources :posts, except: [:index] do
     resources :comments, only: [:create, :destroy]
+
+    # 通知一覧画面
+    resources :notifications, only: :index
   end
 end
