@@ -25,6 +25,41 @@
       <% end %>
 
 
+<%
+=begin%>
+コメント
+<%
+=end%>
+  <%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :comment, size: "40x5" %>
+  <%= f.submit '送信', class: "btn-sm btn-primary" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>コメント投稿者</th>
+      <th>コメント内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.user.name %></td>
+        <td><%= comment.comment %></td>
+        <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%
+=begin%>
+ ここまで
+<%
+=end%>
+
+
+
     <%= link_to '編集', edit_post_path(@post) %> |
     <%= link_to '戻る', posts_path %>
   </div>
