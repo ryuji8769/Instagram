@@ -1,3 +1,52 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.posts_field {
+	width: 35%;
+    margin: 0 auto;
+}
+
+.posts_field {
+	width: 35%;
+}
+
+.field3 h1 {
+    width: 50%;
+	margin: 0 auto;
+	font-weight: lighter;
+	padding: 20px;
+}
+
+.field3 {
+    text-align: center;
+	border: solid 1px rgb(241, 241, 241)
+}
+
+.field3_1 input {
+	height: 50px;
+	font-size: 20px;
+    margin-top: 12px;
+    background-color: white;
+    color: skyblue;
+	border: solid 1px rgb(243, 243, 243);
+	margin-left: 430px;
+}
+
+#post_image {
+    width: 50%;
+    margin-top: 30px;
+	padding: 20px;
+}
+
+#post_text {
+    width: 90%;
+    margin-top: 30px;
+	margin-bottom: 30px;
+    height: 150px;
+	border: solid 1px rgb(231, 230, 230)
+}
+
+a {
+    color: black;
+	text-decoration: none;
+}
