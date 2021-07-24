@@ -19,14 +19,19 @@ class User < ApplicationRecord
   has_many :following_user, through: :following, source: :follower
   has_many :follower_user, through: :follower, source: :following
 
+
+  # フォローするための関数
   def follow(user_id)
     following.create(follower_id: user_id)
   end
 
+  # フォローを外すための関数
   def unfollow(user_id)
     following.find_by(follower_id: user_id).destroy
   end
 
+
+  # ユーザーを既にフォローしているかを調べる関数
   def following?(user_id)
     following_user.include?(user_id)
   end

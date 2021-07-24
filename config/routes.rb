@@ -16,6 +16,13 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  # フォローしたり、フォローを外すためのアクションを定義する準備
+  post 'follow/:id' => 'relationships#follow', as: 'follow'
+  delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # 「フォロー一覧」と「フォロワー一覧」のページ
+  resources :users, only: [:show] do
+    get :following, :follower, on: :member
+  end
+
 end
