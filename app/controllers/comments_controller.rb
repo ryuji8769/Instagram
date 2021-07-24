@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
 
-  
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
+      # コメントをしたタイミングで通知レコードを作成
+      @post.create_notification_comment!(current_user, @comment.id)
       redirect_to request.referer
     else
       @post_new = Book.new
