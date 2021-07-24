@@ -11,6 +11,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @like = Like.new
     @user = User.find_by(id: @post.user_id) #ユーザーのデータを取得する処理
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   # GET /posts/new

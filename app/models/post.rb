@@ -5,6 +5,8 @@ class Post < ApplicationRecord
     has_many :likes
     has_many :liked_users, through: :likes, source: :user
 
+	# コメント
+	has_many :comments, dependent: :destroy
 
 	#  紐付け（ユーザと投稿）
 	belongs_to:user

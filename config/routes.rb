@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'relationships/new'
+  
   get '/' => 'homes#index'
 
   devise_for :users, controllers: {
@@ -26,4 +26,8 @@ Rails.application.routes.draw do
     get :following, :follower, on: :member
   end
 
+  # コメント
+  resources :posts, except: [:index] do
+    resources :comments, only: [:create, :destroy]
+  end
 end

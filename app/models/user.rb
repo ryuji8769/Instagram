@@ -5,8 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-        #  紐付け（ユーザと投稿）
-         has_many :posts, dependent: :destroy, foreign_key: :post_user_id
+    #  紐付け（ユーザと投稿）
+  has_many :posts, dependent: :destroy, foreign_key: :post_user_id
+
+  # コメント
+  has_many :comments, dependent: :destroy
 
   # いいね
   has_many :posts, dependent: :destroy
